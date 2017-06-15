@@ -12,6 +12,7 @@
 		D86136051EF2CECC008DA89E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D86136031EF2CECC008DA89E /* Main.storyboard */; };
 		D86136071EF2CECC008DA89E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D86136061EF2CECC008DA89E /* Assets.xcassets */; };
 		D861360A1EF2CECC008DA89E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D86136081EF2CECC008DA89E /* LaunchScreen.storyboard */; };
+		D86136151EF2CFC9008DA89E /* ZoomAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86136141EF2CFC9008DA89E /* ZoomAnimationController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		D86136061EF2CECC008DA89E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D86136091EF2CECC008DA89E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D861360B1EF2CECC008DA89E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D86136141EF2CFC9008DA89E /* ZoomAnimationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomAnimationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,13 +57,38 @@
 			isa = PBXGroup;
 			children = (
 				D86135FF1EF2CECC008DA89E /* AppDelegate.swift */,
-				D86136011EF2CECC008DA89E /* ViewController.swift */,
 				D86136031EF2CECC008DA89E /* Main.storyboard */,
-				D86136061EF2CECC008DA89E /* Assets.xcassets */,
-				D86136081EF2CECC008DA89E /* LaunchScreen.storyboard */,
-				D861360B1EF2CECC008DA89E /* Info.plist */,
+				D86136121EF2CF4A008DA89E /* ViewController */,
+				D86136111EF2CF0E008DA89E /* AnimationController */,
+				D86136131EF2CF5B008DA89E /* SupportingFiles */,
 			);
 			path = Transition;
+			sourceTree = "<group>";
+		};
+		D86136111EF2CF0E008DA89E /* AnimationController */ = {
+			isa = PBXGroup;
+			children = (
+				D86136141EF2CFC9008DA89E /* ZoomAnimationController.swift */,
+			);
+			path = AnimationController;
+			sourceTree = "<group>";
+		};
+		D86136121EF2CF4A008DA89E /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				D86136011EF2CECC008DA89E /* ViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		D86136131EF2CF5B008DA89E /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				D861360B1EF2CECC008DA89E /* Info.plist */,
+				D86136081EF2CECC008DA89E /* LaunchScreen.storyboard */,
+				D86136061EF2CECC008DA89E /* Assets.xcassets */,
+			);
+			name = SupportingFiles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,6 +162,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D86136151EF2CFC9008DA89E /* ZoomAnimationController.swift in Sources */,
 				D86136021EF2CECC008DA89E /* ViewController.swift in Sources */,
 				D86136001EF2CECC008DA89E /* AppDelegate.swift in Sources */,
 			);
@@ -312,6 +340,7 @@
 				D86136101EF2CECC008DA89E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
