@@ -17,23 +17,41 @@ class ZoomAnimationController: NSObject, UIViewControllerAnimatedTransitioning {
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
         let containerView = transitionContext.containerView
         if  let fromController = transitionContext.viewController(forKey: .from),
-            let toController = transitionContext.viewController(forKey: .to),
-            let snapshot = toController.view.snapshotView(afterScreenUpdates: true) {
+            let toController = transitionContext.viewController(forKey: .to) {
 
-            snapshot.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
-            snapshot.center = fromController.view.center
+            let isDismiss = toController.presentedViewController == fromController
 
-            containerView.addSubview(toController.view)
-            containerView.addSubview(snapshot)
-            toController.view.isHidden = true
+            if !isDismiss, let snapshot = toController.view.snapshotView(afterScreenUpdates: true) {
 
-            UIView.animate(withDuration: transitionDuration(using: transitionContext), delay: 0, options: .curveEaseIn, animations: {
-                snapshot.transform = CGAffineTransform.identity
-            }, completion: { (complete) in
-                toController.view.isHidden = false
-                snapshot.removeFromSuperview()
-                transitionContext.completeTransition(complete)
-            })
+                snapshot.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
+                snapshot.center = fromController.view.center
+
+                containerView.addSubview(toController.view)
+                containerView.addSubview(snapshot)
+                toController.view.isHidden = true
+
+                UIView.animate(withDuration: transitionDuration(using: transitionContext), delay: 0, options: .curveEaseIn, animations: {
+                    snapshot.transform = CGAffineTransform.identity
+                }, completion: { (complete) in
+                    toController.view.isHidden = false
+                    snapshot.removeFromSuperview()
+                    transitionContext.completeTransition(complete)
+                })
+            } else {
+                if let snapshot = fromController.view.snapshotView(afterScreenUpdates: true) {
+
+                    containerView.addSubview(toController.view)
+                    containerView.addSubview(snapshot)
+
+                    UIView.animate(withDuration: transitionDuration(using: transitionContext), delay: 0, options: .curveEaseIn, animations: {
+                        snapshot.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
+                        snapshot.alpha = 0
+                    }, completion: { (complete) in
+                        snapshot.removeFromSuperview()
+                        transitionContext.completeTransition(complete)
+                    })
+                }
+            }
         }
     }
 }

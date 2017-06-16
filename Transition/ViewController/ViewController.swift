@@ -16,10 +16,12 @@ class ViewController: UIViewController, UIViewControllerTransitioningDelegate {
         return zoomAnimationController
     }
 
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return zoomAnimationController
+    }
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "zoom" {
-            segue.destination.transitioningDelegate = self
-        }
+        segue.destination.transitioningDelegate = self
     }
 }
 

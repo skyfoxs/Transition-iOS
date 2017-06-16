@@ -27,16 +27,26 @@
                                     <segue destination="vmL-pG-Myz" kind="show" identifier="zoom" id="zNA-ob-xX7"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uLm-3S-rsu">
+                                <rect key="frame" x="160.5" y="371" width="53" height="30"/>
+                                <state key="normal" title="Present"/>
+                                <connections>
+                                    <segue destination="voz-NA-tfQ" kind="presentation" identifier="presentModal" id="yZe-7Q-55i"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="uLm-3S-rsu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7vi-6h-Z9x"/>
                             <constraint firstItem="Koz-jg-jdy" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="NLw-JU-1br"/>
                             <constraint firstItem="Koz-jg-jdy" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="acL-d8-Cz3"/>
+                            <constraint firstItem="uLm-3S-rsu" firstAttribute="top" secondItem="Koz-jg-jdy" secondAttribute="bottom" constant="23" id="c1Z-La-9gC"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="215" y="139"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="3wh-bF-f9O">
@@ -55,6 +65,39 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rik-CQ-xDr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="954" y="139"/>
+        </scene>
+        <!--Orange View Controller-->
+        <scene sceneID="3vr-Uz-usb">
+            <objects>
+                <viewController id="voz-NA-tfQ" customClass="OrangeViewController" customModule="Transition" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Hgj-Gm-AWA"/>
+                        <viewControllerLayoutGuide type="bottom" id="ItE-cE-clM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Hyo-O2-0cS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Li6-wQ-zf8">
+                                <rect key="frame" x="160" y="318" width="54" height="30"/>
+                                <state key="normal" title="Dismiss">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="dismiss" destination="voz-NA-tfQ" eventType="touchUpInside" id="v07-Gu-UzS"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="Li6-wQ-zf8" firstAttribute="centerX" secondItem="Hyo-O2-0cS" secondAttribute="centerX" id="d7P-qo-IR5"/>
+                            <constraint firstItem="Li6-wQ-zf8" firstAttribute="centerY" secondItem="Hyo-O2-0cS" secondAttribute="centerY" id="jxZ-3f-cfk"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2Pm-lW-o9g" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="953" y="916"/>
         </scene>
     </scenes>
 </document>
